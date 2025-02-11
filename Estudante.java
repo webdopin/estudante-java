@@ -6,12 +6,12 @@ public class Estudante {
     private char periodo; // 'm' - manhã, 't' - tarde, 'n' - noite, 'i' - integral
 
     // Construtor
-    public Estudante(String nome, int idade, char periodo) {
+    public Estudante(String nome, int idade, char periodo, boolean transferido) {
         this.nome = nome;
         this.idade = idade;
         this.periodo = periodo;
         this.frequencia = 0.0;
-        this.transferido = false;
+        this.transferido = transferido;
     }
 
     // Método para apresentar o estudante
@@ -28,42 +28,17 @@ public class Estudante {
         this.frequencia += 1.25;
     }
 
-    // Métodos Geers e Setterstt
-    public String getNome() {
-        return nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public double getFrequencia() {
-        return frequencia;
-    }
-
-    public boolean isTransferido() {
-        return transferido;
-    }
-
-    public char getPeriodo() {
-        return periodo;
-    }
-
-    public void setTransferido(boolean transferido) {
-        this.transferido = transferido;
-    }
-
     // Método principal para testar a classe
     public static void main(String[] args) {
-        Estudante eu = new Estudante("Meu Nome", 20, 'm');
-        Estudante colega = new Estudante("Colega Favorito", 21, 't');
+        Estudante bruno = new Estudante("Bruno", 18, 'm', true);
+        Estudante rafael = new Estudante("Rafael", 17, 'm', false);
 
-        eu.responderChamada();
-        eu.responderChamada();
-        colega.responderChamada();
+        bruno.responderChamada();
+        bruno.responderChamada();
+        rafael.responderChamada();
 
-        eu.apresentarEstudante();
+        bruno.apresentarEstudante();
         System.out.println();
-        colega.apresentarEstudante();
+        rafael.apresentarEstudante();
     }
 }
